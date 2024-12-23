@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="lock.css">
+</head>
+<body>
+
+    <script src="script.js"></script>
+    <div id="computer-screen-container" class="hidden">
+        <div onclick="closeScreen()" class="btn-close" id="computer-screen-close">
+            X
+        </div>
+        <div id="login-screen" class="hidden">
+
+            <div id="profile-pic">
+                <div id="profile-head"></div>
+                <div id="profile-body"></div>
+            </div>
+            <div id="login-name">I.T. Admin</div>
+            <div id="pin-container">
+                <input maxlength="4" type="password" placeholder="Pin" name="" id="pin-input">
+                <button onclick="enterPin()" id="btn-pin">→</button>
+            </div>
+            <div onclick="pinHint()" id="forgot-pin">I forgot my PIN</div>
+            <div id="hint-pin" class="hidden">HINT: I forget it all the time</div>
+        </div>
+        <div id="computer-game"></div>
+        
+    </div>
+    <div class="room">
+
+        <img id="room" src="images/room2.png" alt="">
+        <img id="table" src="images/table.png" alt="">
+        <img id="laptop" onclick="openScreen()" src="images/laptop3.png" alt="">
+        <img id="light1" src="images/light-off.png" alt="">
+        <img id="light2" src="images/light-on.png" alt="">
+        <img id="light3" src="images/light-off.png" alt="">
+        <img id="light4" src="images/light-on.png" alt="">
+        <img id="light5" src="images/light-on.png" alt="">
+        <img id="light6" src="images/light-on.png" alt="">
+        <img id="light7" src="images/light-off.png" alt="">
+        <img id="light8" src="images/light-on.png" alt="">
+        <img id="light9" src="images/light-off.png" alt="">
+        <img id="stick-9" src="images/stick-9.png" alt="" onclick="openChest()">
+        <img id="stick-3" src="images/stick-3.png" alt="">
+        <img id="stick-6" src="images/stick-6.png" alt="">
+        <img id="stick-92" src="images/stick-9.png" alt="">
+        <div id="stick-9-shadow"></div>
+        <div id="stick-3-shadow"></div>
+        <div id="stick-6-shadow"></div>
+        <div id="stick-92-shadow"></div>
+        <img id="chest-open" src="images/chest-closed.png" alt="">
+        <div id="math-book" onclick="openMath()">
+            <div id="math-cover">
+                MATH
+            </div>
+            3 + 4 = 7 6 - 2 = 4 5 x 3 = 15 8 ÷ 2 = 4 10 - 5 = 5 4 + 6 = 10 9 x 2 = 18 7 - 3 = 4 12 ÷ 3 = 4 2 x 8 = 16 4 + 6 = 10 9 x 2 = 18 7 - 3 = 4 12 ÷ 3 = 4 2 x 8 = 16 12 ÷ 3 = 4 2 x 8 = 16
+        </div>
+        <img id="shelf" src="images/shelf.png" alt="">
+        <img id="shelf2" src="images/shelf.png" alt="">
+        <img id="lock1" src="images/lock-new.png" alt="">
+        <img id="lock2" src="images/lock-new.png" alt="">
+        <img id="lock3" src="images/lock-new.png" alt="">
+        <img id="key1" onclick="clickKey1()" src="images/key.png" alt="">
+        <img id="key2" onclick="clickKey2()" src="images/key.png" alt="">
+        <img id="key3" onclick="clickKey3()" src="images/key.png" alt="">
+        <img id="cog1" src="images/cog-wheel.png" alt="">
+        <img id="cog2" src="images/cog-wheel.png" alt="">
+        <img id="cog3" src="images/cog-wheel.png" alt="">
+        <img id="rug" onclick="moveRug()" src="images/rug.png" alt="">
+        <img id="gift" onclick="popPresent()" src="images/gift.png" alt="">
+
+        <img id="plant" onclick="movePlant()" src="images/plant.png" alt="">
+        <img id="essay" class="essay-small" onclick="enlargeEssay()" src="images/essay.png" alt="">
+        <div onclick="minifyEssay()" class="btn-essay-close hidden " id="close-essay">X</div>
+        <div id="math-book-container" class="hidden">
+            <img id="math-book-tasks" class="" src="images/math-book-tasks.png" alt="">
+            <div onclick="closeMath()" class="btn-close" id="computer-screen-close">
+                X
+            </div>
+        </div>
+
+        <div id="working-watch"">
+            <div id="outer-watch"></div>
+            <div id="inner-watch">
+                <div id="dot-12">•</div>
+                <div id="dot-1" >•</div>
+                <div id="dot-2" >•</div>
+                <div id="dot-3" >•</div>
+                <div id="dot-4" >•</div>
+                <div id="dot-5" >•</div>
+                <div id="dot-6" >•</div>
+                <div id="dot-7" >•</div>
+                <div id="dot-8" >•</div>
+                <div id="dot-9" >•</div>
+                <div id="dot-10" >•</div>
+                <div id="dot-11" >•</div>
+                <div id="minut-hand"></div>
+                <div id="hour-hand"></div>
+            </div>
+            
+        </div>
+        <div id="light-switch" class="default-light-switch">
+            <div class="button-light-container">
+                <div class="button-light-ring"></div>
+                <div onclick="flipLights(1)" class="button-light"></div>
+            </div>
+            <div class="button-light-container">
+                <div class="button-light-ring"></div>
+                <div onclick="flipLights(3)" class="button-light"></div>
+            </div>
+            <div class="button-light-container">
+                <div class="button-light-ring"></div>
+                <div onclick="flipLights(5)" class="button-light"></div>
+            </div>
+            <div class="button-light-container">
+                <div class="button-light-ring"></div>
+                <div onclick="flipLights(2)" class="button-light"></div>
+            </div>
+            <div class="button-light-container">
+                <div class="button-light-ring"></div>
+                <div onclick="flipLights(4)" class="button-light"></div>
+            </div>
+        </div>
+        <div id="light-switch-hole"></div>
+
+        <img id="fruit-painting" src="images/fruit-painting.png" alt="">
+
+        <div id="giftinator-container">
+            <div id="giftinator-front">
+                <img id="giftinator" src="images/giftinator-empty.png" alt="">
+                <div class="giftinator-side"></div>
+                <div id="giftinator-border"></div>
+                <div id="wall-button" class="wall-button"></div>
+                <div id="wall-button-popped" onclick="final()" class="wall-button-popped hidden"></div>
+            </div>
+            <div id="giftinator-back">
+                <div id="giftinator-back-side"></div>
+            </div>
+        </div>
+        <div id="gift-container">
+            <div id="gift-hole"></div>
+        </div>
+        <img id="colors" onclick="openColors()" class="colors-wall" src="images/colors.png" alt="">
+        <img id="present" class="present hidden" src="images/present2.png" alt="">
+        <div class="color-container hidden" id="colors-container">
+            <div onclick="closeColors()" class="btn-colors-close" id="">
+                X
+            </div>
+            <img id="colors-wall" class="colors-center" src="images/colors.png" alt="">
+
+        </div>
+
+        <div id="cog-box-1" class="cog-box-shelf-1">
+            <div onclick="minifyCogBox1()" class="hidden " id="close-cog-1">
+                X
+            </div>
+            <div class="cog-box-upper">
+                <img id="palette" src="images/color-palette.png" alt="">
+            </div>
+            <div class="cog-box-lower"></div>
+            <div class="full-lock">
+                <div class="lock-positioner">
+                    <div class="lock-container">
+                        <div class="lock-wheel">
+                            <div id="lock-inc-1" class="lock-inc" onclick="incLock(1)">+</div>
+                            <div class="lock-display" id="pad-lock-1">0</div>
+                            <div class="lock-dec" onclick="decLock(1)">-</div>
+                        </div>
+                        <div class="lock-wheel">
+                            <div class="lock-inc" id="lock-inc-2" onclick="incLock(2)">+</div>
+                            <div class="lock-display" id="pad-lock-2">0</div>
+                            <div class="lock-dec" onclick="decLock(2)">-</div>
+                        </div>
+                        <div class="lock-wheel">
+                            <div class="lock-inc"id="lock-inc-3" onclick="incLock(3)">+</div>
+                            <div class="lock-display" id="pad-lock-3">0</div>
+                            <div class="lock-dec" onclick="decLock(3)">-</div>
+                        </div>
+                        <div class="lock-wheel">
+                            <div class="lock-inc" id="lock-inc-4" onclick="incLock(4)">+</div>
+                            <div class="lock-display" id="pad-lock-4">0</div>
+                            <div class="lock-dec" onclick="decLock(4)">-</div>
+                        </div>
+                        <div class="unlock-button" onclick="checkLock1()">Unlock</div>
+                    </div>
+        
+                </div>
+            </div>
+        </div>
+        <div id="enlarge-cog-box-1" onclick="enlargeCogBox1() "></div>
+
+        <div id="cog-box-2" class="cog-box-shelf-2">
+            <div onclick="minifyCogBox2()" class="hidden " id="close-cog-2">X</div>
+            <div class="cog-box-upper">
+                <img id="math" src="images/math.png" alt="">
+            </div>
+            <div class="cog-box-lower"></div>
+            <div class="full-lock">
+                <div class="lock-positioner">
+                    <div class="lock-container">
+                        <div class="lock-wheel">
+                            <div class="lock-inc" id="lock-inc-5" onclick="incLock(5)">+</div>
+                            <div class="lock-display" id="pad-lock-5">0</div>
+                            <div class="lock-dec" onclick="decLock(5)">-</div>
+                        </div>
+                        <div class="lock-wheel">
+                            <div class="lock-inc" id="lock-inc-6" onclick="incLock(6)">+</div>
+                            <div class="lock-display" id="pad-lock-6">0</div>
+                            <div class="lock-dec" onclick="decLock(6)">-</div>
+                        </div>
+                        <div class="lock-wheel">
+                            <div class="lock-inc" id="lock-inc-7" onclick="incLock(7)">+</div>
+                            <div class="lock-display" id="pad-lock-7">0</div>
+                            <div class="lock-dec" onclick="decLock(7)">-</div>
+                        </div>
+                        <div class="lock-wheel">
+                            <div class="lock-inc" id="lock-inc-8" onclick="incLock(8)">+</div>
+                            <div class="lock-display" id="pad-lock-8">0</div>
+                            <div class="lock-dec" onclick="decLock(8)">-</div>
+                        </div>
+                        <div class="unlock-button" onclick="checkLock2()">Unlock</div>
+                    </div>
+        
+                </div>
+            </div>
+        </div>
+        <div id="enlarge-cog-box-2" onclick="enlargeCogBox2() "></div>
+
+        <div id="cog-box-3" class="cog-box-shelf-3">
+            <div onclick="minifyCogBox3()" class="hidden " id="close-cog-3">X</div>
+            <div class="cog-box-upper" id="cog-box-upper-3">
+                <img id="laptop-icon" src="images/laptop-icon.png" alt="">
+            </div>
+            <div class="cog-box-lower"></div>
+            <div class="full-lock">
+                <div class="lock-positioner">
+                    <div class="lock-container">
+                        <div class="lock-wheel">
+                            <div class="lock-inc" id="lock-inc-9" onclick="incLock(9)">+</div>
+                            <div class="lock-display" id="pad-lock-9">0</div>
+                            <div class="lock-dec" onclick="decLock(9)">-</div>
+                        </div>
+                        <div class="lock-wheel">
+                            <div class="lock-inc" id="lock-inc-10" onclick="incLock(10)">+</div>
+                            <div class="lock-display" id="pad-lock-10">0</div>
+                            <div class="lock-dec" onclick="decLock(10)">-</div>
+                        </div>
+                        <div class="lock-wheel">
+                            <div class="lock-inc" id="lock-inc-11" onclick="incLock(11)">+</div>
+                            <div class="lock-display" id="pad-lock-11">0</div>
+                            <div class="lock-dec" onclick="decLock(11)">-</div>
+                        </div>
+                        <div class="lock-wheel">
+                            <div class="lock-inc" id="lock-inc-12" onclick="incLock(12)">+</div>
+                            <div class="lock-display" id="pad-lock-12">0</div>
+                            <div class="lock-dec" onclick="decLock(12)">-</div>
+                        </div>
+                        <div class="unlock-button" onclick="checkLock3()">Unlock</div>
+                    </div>
+        
+                </div>
+            </div>
+        </div>
+        <div id="enlarge-cog-box-3" onclick="enlargeCogBox3() "></div>
+
+
+    </div>
+</body>
+</html>
